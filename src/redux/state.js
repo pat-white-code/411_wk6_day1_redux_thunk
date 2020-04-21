@@ -1,4 +1,5 @@
 export default {
+   isLoading: false,
     user: {
         username: 'test-user-1',
         email: 'test-user@example.com'
@@ -145,7 +146,6 @@ export default {
            "horsepower":225
         }
     ],
-    makes: [],
-    isLoading: false
+    makes: []
   };
   

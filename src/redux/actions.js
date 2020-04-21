@@ -26,6 +26,11 @@ export const beginFetch = () => {
         type: 'BEGIN_FETCH'
     }
 }
+export const fetchSuccess = () => {
+    return {
+        type: 'FETCH_SUCCESS'
+    }
+}
 
 export const fetchMakes = () => {
     return (dispatch) => {
@@ -33,5 +38,6 @@ export const fetchMakes = () => {
         fetch(url)
             .then(res => res.json())
             .then(json => dispatch({type: 'FETCH_MAKES', value: json.Results}))
+            .then(() => dispatch(fetchSuccess()))
     }
 }

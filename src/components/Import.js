@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // import TableContainer from '@material-ui/core/TableContainer';
 import React from 'react';
 import VertMore from './VertMore';
+import Loader from './Loader';
 
 
 const Import = props => { 
@@ -28,6 +29,9 @@ const Import = props => {
     return ( 
         <div className={classes.div}>
             <h2>Count: {props.makes.length}</h2>
+            {props.isLoading && (
+                <Loader />
+            )}
             <Button className={classes.button} variant='contained' color='secondary' onClick={props.fetchMakes}>
                 Import
             </Button>

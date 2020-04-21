@@ -16,10 +16,13 @@ const cars = (state = [], action) => {
 }
 
 export const isLoading = (state = false, action) => {
+    let newState = null
     switch(action.type) {
         case 'BEGIN_FETCH':
-            let newState = state
-            newState = !state
+            newState = true
+            return newState
+        case 'FETCH_SUCCESS':
+            newState = false
             return newState
         default:
             return state
@@ -39,4 +42,4 @@ const makes = (state = [], action) => {
     }
 }
 
-export default combineReducers({ user, cars, makes })
+export default combineReducers({ user, cars, makes, isLoading })
