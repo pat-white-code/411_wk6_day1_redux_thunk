@@ -1,17 +1,19 @@
 // fill out this container
 import Import from '../components/Import';
 import { connect } from 'react-redux';
-import { fetchMakes } from '../redux/actions';
+import { fetchMakes, deleteMake } from '../redux/actions';
 
 const mapStateToProps = state => {
   return {
-    makes: state.makes
+    makes: state.makes,
+    isLoading: state.isLoading
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchMakes: ()=> dispatch(fetchMakes())
+    fetchMakes: ()=> dispatch(fetchMakes()),
+    deleteMake: (index)=> dispatch(deleteMake(index))
   }
 }
 

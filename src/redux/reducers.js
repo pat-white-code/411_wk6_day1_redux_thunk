@@ -15,10 +15,25 @@ const cars = (state = [], action) => {
     }
 }
 
+export const isLoading = (state = false, action) => {
+    switch(action.type) {
+        case 'BEGIN_FETCH':
+            let newState = state
+            newState = !state
+            return newState
+        default:
+            return state
+    }
+}
+
 const makes = (state = [], action) => {
     switch(action.type) {
         case 'FETCH_MAKES':
             return action.value
+        case 'DELETE_MAKE':
+            let newState = [...state]
+            newState.splice(action.value, 1);
+            return newState;
         default:
             return state
     }

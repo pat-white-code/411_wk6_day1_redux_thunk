@@ -145,6 +145,7 @@ export default {
            "horsepower":225
         }
     ],
-    makes: []
+    makes: [],
+    isLoading: false
   };
   
